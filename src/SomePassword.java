@@ -6,7 +6,7 @@ public class SomePassword {
         boolean result = false;
         try {
             if (login.matches("[a-zA-Z0-9]*") && login.length() <= 20) {
-                if (password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,20}$") && password.length() <= 20 && password.equals(confirmPassword)) {
+                if (password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,20}$") && password.equals(confirmPassword)) {
                     System.out.println("Пароль и логин введены верно!");
                     result = true;
                 } else {
