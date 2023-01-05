@@ -5,8 +5,8 @@ public class SomePassword {
     public static boolean someMet(String login, String password, String confirmPassword) {
         boolean result = false;
         try {
-            if (login.matches("[a-zA-z0-9]*") && login.length() <= 20) {
-                if (password.matches("[a-zA-z0-9]*") && password.length() <= 20 && password.equals(confirmPassword)) {
+            if (login.matches("[a-zA-Z0-9]*") && login.length() <= 20) {
+                if (password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,20}$") && password.length() <= 20 && password.equals(confirmPassword)) {
                     System.out.println("Пароль и логин введены верно!");
                     result = true;
                 } else {
@@ -32,5 +32,7 @@ public class SomePassword {
         System.out.println("Подтвердите пароль: ");
         String confirmPassword = sc.nextLine();
         someMet(login, password, confirmPassword);
+
+
     }
 }
